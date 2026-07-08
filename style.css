@@ -70,20 +70,26 @@ body.home {
   align-items: center;
   height: 100vh;
 }
+/*Glass Cards */
 .card {
-  background: rgba(255,255,255,0.1);
+ display:none;/*HIDE ALL BY DEFAULT */
+ background:rgba (255,255,255,0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 15px;
   padding: 40px;
   width: 80%;
-  max-width: 600px;
+  max-width: 500px;
   text-align: center;
-  position: absolute;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
 }
-.card.active { opacity: 1; }
+.card-active  {
+ dispaly:block;/*ONLY SHOW THE ACTIVE CARD*/
+}
+  .card h2 {font-size 2em-margin-bottom:10px;color:white;}
+  .card p{font-size;/.2em;color:white;}
+  
+
+
 .card h2 { font-size: 2em; margin-bottom: 15px; color: white; }
 .card p { font-size: 1.2em; color: white; }
 
