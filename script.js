@@ -1,17 +1,32 @@
 
-}
-*
-function toggleMenu() {
-  document.getElementById('menuBox').classList.toggle('active');
-}
 
-let currentCard = 0;
-const cards = document.querySelectorAll('.card');
 
-function showNextCard() {
-  cards[currentCard].classList.remove('active');
-  currentCard = (currentCard + 1) % cards.length;
-  cards[currentCard].classList.add('active');
-}
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // 1. MENU TOGGLE FUNCTION
+  const menuBtn = document.querySelector('.menu-icon');
+  const menuBox = document.getElementById('menuBox');
 
-setInterval(showNextCard, 5000); // 5 seconds
+  if (menuBtn && menuBox) {
+    menuBtn.addEventListener('click', () => {
+      menuBox.classList.toggle('active');
+    });
+  }
+
+  // 2. CARD SLIDER FUNCTION
+  const cards = document.querySelectorAll('.card');
+  let currentCardIndex = 0;
+
+  if (cards.length > 0) {
+    // Show first card
+    cards[currentCardIndex].classList.add('active');
+
+    // Loop every 5 seconds
+    setInterval(() => {
+      cards[currentCardIndex].classList.remove('active');
+      currentCardIndex = (currentCardIndex + 1) % cards.length;
+      cards[currentCardIndex].classList.add('active');
+    }, 5000);
+  }
+
+});
